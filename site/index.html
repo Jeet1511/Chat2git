@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chat2git — Local GitHub MCP Server &amp; AI Coding Assistant Connector</title>
+<meta name="description" content="Connect MCP-compatible AI assistants to GitHub with Chat2git, a free MIT-licensed local bridge for browsing, reading, searching and optionally changing repositories.">
+<meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="Jeet Mondal"><meta name="theme-color" content="#0F172A">
+<meta name="keywords" content="GitHub MCP server, GitHub MCP connector, AI coding assistant GitHub integration, local GitHub bridge, MCP GitHub tools, inspect GitHub repository with AI, Chat2git">
+<link rel="canonical" href="https://jeet1511.github.io/chat2git/"><link rel="icon" type="image/svg+xml" href="logo.svg">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Chat2git">
+<meta property="og:title" content="Chat2git — A local GitHub bridge for AI assistants">
+<meta property="og:description" content="Let MCP-compatible AI assistants inspect GitHub repositories through a local bridge. Read-first access, opt-in writes, and a token that stays on your machine.">
+<meta property="og:url" content="https://jeet1511.github.io/chat2git/"><meta property="og:image" content="https://jeet1511.github.io/chat2git/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Chat2git local GitHub MCP server">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chat2git — Local GitHub MCP Server">
+<meta name="twitter:description" content="A local, read-first GitHub bridge for MCP-compatible AI assistants.">
+<meta name="twitter:image" content="https://jeet1511.github.io/chat2git/og-image.png">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org","@graph":[
+ {"@type":"SoftwareApplication","@id":"https://jeet1511.github.io/chat2git/#software","name":"Chat2git","alternateName":"Chat2git GitHub MCP Server","description":"A local GitHub bridge exposing repository browsing, file reading, code search, branch and commit inspection, comparisons and opt-in writes to MCP-compatible AI assistants.","applicationCategory":"DeveloperApplication","operatingSystem":["Windows","macOS","Linux"],"softwareVersion":"0.1.0","license":"https://opensource.org/license/mit/","url":"https://jeet1511.github.io/chat2git/","downloadUrl":"https://github.com/jeet1511/chat2git","codeRepository":"https://github.com/jeet1511/chat2git","author":{"@type":"Person","name":"jeet1511","url":"https://github.com/jeet1511"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"image":"https://jeet1511.github.io/chat2git/og-image.png","softwareRequirements":"Node.js 20 or later"},
+ {"@type":"WebSite","@id":"https://jeet1511.github.io/chat2git/#website","url":"https://jeet1511.github.io/chat2git/","name":"Chat2git"},
+ {"@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"What is Chat2git?","acceptedAnswer":{"@type":"Answer","text":"Chat2git is a free, MIT-licensed local GitHub bridge for MCP-compatible AI assistants. It exposes repository metadata, file trees, file reading, branches, commits, code search and comparisons through MCP stdio and a local HTTP API."}},
+ {"@type":"Question","name":"Can Chat2git modify my GitHub repository?","acceptedAnswer":{"@type":"Answer","text":"Write operations are disabled by default. The operator must enable CHAT2GIT_ALLOW_WRITES=true locally, and each write request must include an approved flag."}},
+ {"@type":"Question","name":"Do I need a GitHub token?","acceptedAnswer":{"@type":"Answer","text":"Public repository browsing and reading can work without a token. Code search, private repository access and writes require a GitHub token with the necessary permissions."}},
+ {"@type":"Question","name":"Which AI assistants are supported?","acceptedAnswer":{"@type":"Answer","text":"Clients that support MCP servers over stdio can configure Chat2git. The current implementation is local-only and does not provide a remote hosted connector endpoint."}}
+ ]}]}
+</script>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#111a2e;--line:#26344d;--ink:#edf3ff;--muted:#a8b6cc;--cyan:#67e8f9;--blue:#a5b4fc;--green:#86efac}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#1b2b4c 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--cyan);text-underline-offset:4px}a:hover{color:#fff}.wrap{width:min(1040px,calc(100% - 40px));margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;font-weight:750;font-size:19px}.brand img{width:38px;height:38px}nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}nav a{color:var(--muted);text-decoration:none}
+.hero{padding:82px 0 68px;max-width:850px}.eyebrow,.tag{color:var(--green);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px}h1{font-size:clamp(38px,6vw,66px);line-height:1.06;letter-spacing:-.045em;margin:15px 0 22px}.gradient{background:linear-gradient(90deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:20px;color:var(--muted);max-width:760px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.button{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(100deg,var(--cyan),var(--blue));color:#07111f;font-weight:750;text-decoration:none}.button.secondary{background:transparent;border:1px solid #42516c;color:var(--ink)}.trustline,.intro{color:var(--muted);font-size:14px}.section{padding:50px 0;border-top:1px solid var(--line)}h2{font-size:30px;line-height:1.2;margin:0 0 14px}h3{font-size:18px;margin:0 0 8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:15px}.card{background:rgba(17,26,46,.88);border:1px solid var(--line);border-radius:15px;padding:21px}.card p,details p{color:var(--muted);margin:0}pre{white-space:pre;overflow:auto;background:#070c17;border:1px solid var(--line);padding:18px;border-radius:12px;color:#dbeafe;font-size:14px}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.steps{padding-left:24px}.steps li{margin:18px 0}details{padding:17px 0;border-bottom:1px solid var(--line)}summary{cursor:pointer;font-weight:700}details p{margin-top:10px}.callout{border-left:3px solid var(--cyan);padding:12px 18px;background:#101b30;color:var(--muted)}footer{padding:35px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.footlinks{display:flex;gap:18px;flex-wrap:wrap}@media(max-width:650px){header{align-items:flex-start;gap:16px;flex-direction:column}.hero{padding:55px 0 45px}.lead{font-size:18px}}
+</style>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="./"><img src="logo.svg" width="38" height="38" alt="Chat2git logo">Chat2git</a><nav aria-label="Main navigation"><a href="#features">Features</a><a href="#security">Security</a><a href="#quick-start">Quick start</a><a href="#faq">FAQ</a><a href="https://github.com/jeet1511/chat2git">GitHub</a></nav></header>
+<main>
+<section class="hero"><div class="eyebrow">Open-source · MIT License · Local-first</div>
+<h1>A local <span class="gradient">GitHub bridge</span> for AI assistants.</h1>
+<p class="lead">Chat2git connects MCP-compatible AI assistants to your GitHub repositories. Browse repository structure, read files, inspect branches and commits, compare changes, and search code — with optional write access disabled by default.</p>
+<div class="actions"><a class="button" href="https://github.com/jeet1511/chat2git">View source on GitHub</a><a class="button secondary" href="#quick-start">Read the quick start</a></div>
+<p class="trustline">Node.js 20+ · Windows, macOS and Linux · MCP stdio · Local HTTP dashboard · No runtime npm dependencies</p></section>
+<section class="section" id="features"><h2>What Chat2git lets an AI assistant do</h2><p class="intro">A focused GitHub connector for repository understanding and controlled maintenance, exposed as MCP tools and a local dashboard/API.</p><div class="grid">
+<article class="card"><div class="tag">01 · Explore</div><h3>Repository discovery</h3><p>Fetch repository metadata and inspect the file tree without downloading every file's contents.</p></article>
+<article class="card"><div class="tag">02 · Read</div><h3>Targeted file access</h3><p>Read selected text files with a configurable maximum response size to keep context bounded.</p></article>
+<article class="card"><div class="tag">03 · Investigate</div><h3>Branches, commits and search</h3><p>Review branch names, recent commits, code search results and differences between refs.</p></article>
+<article class="card"><div class="tag">04 · Change</div><h3>Opt-in repository writes</h3><p>Create branches, update or delete files, and open pull requests only after local write access is enabled and a call carries its approval flag.</p></article>
+<article class="card"><div class="tag">05 · Integrate</div><h3>MCP stdio server</h3><p>Connect from MCP-compatible AI clients using a local stdio server configuration.</p></article>
+<article class="card"><div class="tag">06 · Operate</div><h3>Local dashboard and HTTP API</h3><p>Choose a repository and inspect it through a browser dashboard served on the loopback interface.</p></article>
+</div></section>
+<section class="section" id="security"><h2>Designed around local control</h2><p class="intro">Chat2git is intended for one user on their own machine. It is not a hosted GitHub service and should not be exposed to a LAN or the public internet.</p><div class="grid">
+<article class="card"><h3>Local-only listener</h3><p>The server accepts loopback binding only and validates host/origin headers.</p></article>
+<article class="card"><h3>Token stays local</h3><p>The GitHub token is used by the local process and is not returned by API routes.</p></article>
+<article class="card"><h3>Writes disabled by default</h3><p>Set <code>CHAT2GIT_ALLOW_WRITES=true</code> yourself to expose write tools; each write also requires <code>approved: true</code>.</p></article></div>
+<p class="callout">Security note: enabling write operations allows an MCP client to make repository changes when it submits the required approval flag. This is an API-level flag, not a separate human confirmation prompt. Review changes in GitHub.</p></section>
+<section class="section" id="quick-start"><h2>Quick start</h2><p class="intro">Run Chat2git locally with Node.js 20 or later. Public repository browsing can work without a token; add a fine-grained GitHub token for private repositories, code search or writes.</p>
+<ol class="steps"><li><strong>Clone the repository</strong><pre><code>git clone https://github.com/jeet1511/chat2git.git
+cd chat2git</code></pre></li><li><strong>Configure the local environment</strong><pre><code>cp .env.example .env
+# Add a fine-grained GITHUB_TOKEN only if needed</code></pre></li><li><strong>Start the dashboard and API</strong><pre><code>npm start</code></pre></li><li><strong>Open the local dashboard</strong><p>Visit <code>http://127.0.0.1:4317</code>, enter a GitHub repository URL, and inspect it. For MCP, configure your client with the absolute path to <code>src/mcp-server.mjs</code>.</p></li></ol>
+<p><a href="https://github.com/jeet1511/chat2git/blob/main/docs/SETUP.md">Complete setup guide</a> · <a href="https://github.com/jeet1511/chat2git/blob/main/skills/chat2git/SKILL.md">Chat2git agent skill</a></p></section>
+<section class="section" id="faq"><h2>Frequently asked questions</h2>
+<details><summary>What is a GitHub MCP server?</summary><p>An MCP server exposes tools and context to an MCP-compatible AI client. Chat2git exposes GitHub repository inspection and controlled write operations through that interface.</p></details>
+<details><summary>Does Chat2git send my code to a Chat2git cloud?</summary><p>No Chat2git-hosted cloud service is included. The local process calls the GitHub API directly. Your AI client may still receive file contents you ask it to read, so follow that client's privacy and data-handling rules.</p></details>
+<details><summary>Can Chat2git edit or delete files?</summary><p>Those tools are unavailable unless the operator enables writes in the local environment. When enabled, write calls must include <code>approved: true</code>. This is an API-level approval flag, not a separate human confirmation prompt.</p></details>
+<details><summary>Which AI assistants are supported?</summary><p>Clients that support MCP servers over stdio can configure Chat2git. The current implementation is local-only and does not provide a remote hosted connector endpoint.</p></details>
+<details><summary>Do public repositories require a GitHub token?</summary><p>Basic public repository browsing and reading can work without a token. Code search, private repository access and write operations require an appropriately scoped GitHub token.</p></details>
+<details><summary>What operating systems are supported?</summary><p>Chat2git is intended for Windows, macOS and Linux and requires Node.js 20 or later.</p></details>
+<details><summary>Is Chat2git free and open source?</summary><p>Chat2git is distributed under the MIT License. Review the repository's LICENSE file for exact terms.</p></details>
+</section></main>
+<footer><p><strong>Chat2git</strong> · Local GitHub MCP server and AI coding assistant connector · Maintained at <a href="https://github.com/jeet1511">github.com/jeet1511</a>.</p><div class="footlinks"><a href="https://github.com/jeet1511/chat2git">Source code</a><a href="https://github.com/jeet1511/chat2git/issues">Report an issue</a><a href="llms.txt">Project facts for AI systems</a><a href="sitemap.xml">Sitemap</a></div><p>MIT licensed. Not affiliated with or endorsed by GitHub.</p></footer>
+</div></body></html>

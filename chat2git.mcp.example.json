@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "chat2git": {
+      "command": "node",
+      "args": ["C:/REPLACE/WITH/ABSOLUTE/PATH/chat2git/src/mcp-server.mjs"]
+    }
+  }
+}

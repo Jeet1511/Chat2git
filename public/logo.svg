@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Chat2git logo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="bubble" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="branch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#67E8F9"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <path d="M58 62H110A22 22 0 0 1 132 84V118A22 22 0 0 1 110 140H92L56 164L64 140H58A22 22 0 0 1 36 118V84A22 22 0 0 1 58 62Z" fill="url(#bubble)"/>
+  <circle cx="66" cy="101" r="6.5" fill="#ECFEFF"/>
+  <circle cx="84" cy="101" r="6.5" fill="#ECFEFF"/>
+  <circle cx="102" cy="101" r="6.5" fill="#ECFEFF"/>
+  <path d="M142 101H180" stroke="#67E8F9" stroke-width="4" stroke-linecap="round" stroke-dasharray="0 12" opacity="0.9"/>
+  <path d="M190 58V198" stroke="url(#branch)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M190 160C190 122 220 132 220 100" stroke="url(#branch)" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <circle cx="190" cy="58" r="13" fill="#67E8F9"/>
+  <circle cx="190" cy="198" r="11" fill="#0F172A" stroke="#A5B4FC" stroke-width="7"/>
+  <circle cx="220" cy="92" r="13" fill="#A5B4FC"/>
+</svg>

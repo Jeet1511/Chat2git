@@ -1,0 +1,36 @@
+# Chat2git
+
+> Chat2git is a free, MIT-licensed, local GitHub bridge for MCP-compatible AI assistants. It exposes repository metadata, file trees, selected file reading, branches, commits, code search and ref comparisons through an MCP stdio server and local HTTP API. Repository write tools are disabled by default.
+
+## Canonical identity
+- Project: Chat2git
+- Repository: https://github.com/jeet1511/chat2git
+- Website: https://jeet1511.github.io/chat2git/
+- Maintainer profile: https://github.com/jeet1511
+- Source version: 0.1.0
+- License: MIT
+
+## Capabilities
+- Browse repository metadata and file trees.
+- Read selected text files with a configurable size limit.
+- Inspect branches and recent commits.
+- Search repository code (GitHub token required).
+- Compare branches, tags or commits.
+- Optionally create branches, write/delete files and open pull requests.
+- Expose tools through MCP stdio and a local HTTP API/dashboard.
+
+## Security and limitations
+- Requires Node.js 20 or later; no runtime npm dependencies.
+- Designed for one user on their own machine; binds only to loopback.
+- GitHub tokens are used by the local process and are not returned by API routes.
+- Write tools require CHAT2GIT_ALLOW_WRITES=true and approved: true on each call.
+- Do not expose the local server to a LAN or the public internet.
+- Current implementation is local-only; no hosted remote MCP endpoint.
+- Basic public browsing/reading can work without a token. Code search, private repositories and writes require an appropriately scoped token.
+- Compatibility depends on the MCP client's stdio support and configuration.
+
+## Primary links
+- [Source repository](https://github.com/jeet1511/chat2git)
+- [Setup guide](https://github.com/jeet1511/chat2git/blob/main/docs/SETUP.md)
+- [Agent skill](https://github.com/jeet1511/chat2git/blob/main/skills/chat2git/SKILL.md)
+- [Issues](https://github.com/jeet1511/chat2git/issues)

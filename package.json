@@ -1,0 +1,39 @@
+{
+  "name": "chat2git",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Local GitHub MCP server and AI coding assistant connector for browsing, reading, searching and optionally changing repositories.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "mcp": "node src/mcp-server.mjs",
+    "check": "node --check src/config.mjs && node --check src/github.mjs && node --check src/server.mjs && node --check src/mcp-server.mjs",
+    "test": "node --test test/smoke.mjs test/server.test.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs"
+  },
+  "license": "MIT",
+  "homepage": "https://jeet1511.github.io/chat2git/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeet1511/chat2git.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeet1511/chat2git/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "github",
+    "github-api",
+    "ai-agents",
+    "ai-coding-assistant",
+    "developer-tools",
+    "github-integration",
+    "ai-agent",
+    "coding-assistant",
+    "repository"
+  ]
+}

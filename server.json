@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-16/server.schema.json",
+  "name": "io.github.jeet1511/chat2git",
+  "description": "Local, read-first GitHub MCP server for AI assistants. Browse repositories, read files, inspect branches and commits, search code and compare refs. Write tools are opt-in.",
+  "repository": {
+    "url": "https://github.com/jeet1511/chat2git",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "chat2git",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "title": "Chat2git",
+  "websiteUrl": "https://jeet1511.github.io/chat2git/"
+}
